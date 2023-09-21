@@ -25,12 +25,12 @@ def print(*a, **kw):
 working_proxy = None
 exit_with_error = False
 try:
-    resp = get("https://v2links.com")
+    resp = get("http://exurl.in")
     available = True
 except KeyboardInterrupt:
     raise KeyboardInterrupt
 except:
-    print("v2links.com is not available to this CI. Getting proxy from api...")
+    print("exurl.in is not available to this CI. Getting proxy from api...")
     from proxy_server import working_proxy, commit_used, discommit_used
     if not working_proxy:
         print('No proxies available, either all proxies used or dead')
