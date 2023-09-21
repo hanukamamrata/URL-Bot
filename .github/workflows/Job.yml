@@ -1,0 +1,27 @@
+name: Job
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: 'Current CI No.'
+        required: false
+        default: '0'
+        type: string
+
+permissions:
+  actions: write
+  
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.10"
+        cache: "pip"
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+    - name: Run Job
+      run: python job.py "${{ github.event.inputs.count }}" "${{ github.token }}" "${{ github.repository }}"

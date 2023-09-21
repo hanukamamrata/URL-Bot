@@ -1,0 +1,9 @@
+container:
+  image: python:slim
+
+build_task:
+  pip_script: pip3 install -r requirements.txt
+  chrome_script: apt update && apt install wget -y && wget --no-verbose -O /tmp/chrome.deb https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_116.0.5845.110-1_amd64.deb && apt install -y /tmp/chrome.deb && rm /tmp/chrome.deb
+  chromedriver_script: wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/116.0.5845.110/linux64/chromedriver-linux64.zip && apt install -y unzip && unzip chromedriver-linux64.zip && rm -rf chromedriver-linux64.zip && mv ./chromedriver-linux64/chromedriver . && rm -rf chromedriver-linux64
+  main_script: python3 ci-job.py
+  

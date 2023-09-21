@@ -1,0 +1,10 @@
+selenium-wire
+selenium-recaptcha
+requests
+bs4
+asyncio
+aiohttp
+aiohttp-proxy
+tldextract
+requests[socks]
+requests[security]
