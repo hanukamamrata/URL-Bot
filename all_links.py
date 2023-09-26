@@ -1,6 +1,6 @@
 from random import choice
 
-v2links_link = ['http://v2links.com/tzpost-' + str(i) for i in range(1, 71)]
+v2links_link = ['http://vlshort.com/tzpost-' + str(i) for i in range(1, 71)]
 
 shrinkearn_link = ['http://tii.la/tzpost-' + str(i) for i in range(1, 71)]
 

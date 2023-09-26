@@ -1,4 +1,4 @@
-#from v2links import run_v2links_bot
+from v2links import run_v2links_bot
 from exurl import run_exurl_bot
 from linkpays import run_linkpays_bot
 from bindaslinks import run_bindaslinks_bot
@@ -21,6 +21,7 @@ def main(proxy=None, **kw):
     
     t.append(Thread(target=lambda: run_linkpays_bot(random_linkpays, proxy, **kw)))
     t.append(Thread(target=lambda: run_bindaslinks_bot(random_bindaslinks, proxy, **kw)))
+    t.append(Thread(target=lambda: run_v2links_bot(random_v2links, proxy, **kw)))
     
     for v in t:
         v.start()
