@@ -24,7 +24,7 @@ def run_bindaslinks_bot(link:str, proxy=None, headless=True):
     if not json.get('status')=='success':
         raise Exception(r2.text)
     else:
-        print(json)
+        print('Bindaaslinks:',json)
 
 if __name__ == "__main__":
     from all_links import random_bindaslinks

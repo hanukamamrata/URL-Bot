@@ -1,11 +1,13 @@
 from time import sleep
 from requests import Session
 from bs4 import BeautifulSoup
+from proxyscrape import get_session
 
-def run_v2links_bot(link:str, proxy=None, headless=True):
+def run_v2links_bot(link:str, proxy=True, headless=True):
     s=Session()
     if proxy:
-        s.proxies={'http':proxy,'https':proxy}
+        pr = get_session()
+        s.proxies={'http':pr,'https':pr}
     s.cookies.set('ab','2', domain='.vzu.us')
     ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
     r1=s.get(link.replace('vlshort.com', 'vzu.us'), headers={'User-Agent': ua, 'Referer': 'https://www.sahityt.com'})
@@ -24,9 +26,9 @@ def run_v2links_bot(link:str, proxy=None, headless=True):
     if not json.get('status')=='success':
         raise Exception(r2.text)
     else:
-        print(json)
+        print('V2links:',json)
 
 if __name__ == "__main__":
     from all_links import random_v2links
-    run_v2links_bot(random_v2links, headless=False)
+    run_v2links_bot(random_v2links, proxy=False, headless=False)
 
