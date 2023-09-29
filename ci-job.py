@@ -22,8 +22,8 @@ def print(*a, **kw):
     kw["flush"] = True # To print directly to CI log without delaying.
     return d(*a, **kw)
 
-working_proxy = None
 exit_with_error = False
+"""working_proxy = None
 try:
     resp = get("http://exurl.in")
     available = True
@@ -45,23 +45,27 @@ if ip_used and not working_proxy:
     if not working_proxy:
         print('No proxies available, either all proxies used or dead')
         available = False
-        exit_with_error = True
-    
+        exit_with_error = True"""
+
+available = True
+from proxyscrape import get_session
+working_proxy = get_session()
+
 if available:
     try:
         # Run the main file
         import main as random_function_idk
-        if working_proxy: commit_used()
+        #if working_proxy: commit_used()
         random_function_idk.main(working_proxy)
         count+=1
     except KeyboardInterrupt:
-        if working_proxy: discommit_used()
+        #if working_proxy: discommit_used()
         raise KeyboardInterrupt
     except:
-        if working_proxy: discommit_used()
-        if not working_proxy and ip:
-            from proxy_server import discommit_used
-            discommit_used('https://'+ip+':80')
+        #if working_proxy: discommit_used()
+        #if not working_proxy and ip:
+            #from proxy_server import discommit_used
+            #discommit_used('https://'+ip+':80')
         exit_with_error = True
         import traceback
         print(traceback.format_exc())

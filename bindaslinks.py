@@ -15,7 +15,11 @@ def run_bindaslinks_bot(link:str, proxy=None, headless=True):
     input_dict = {}
     for elem in form_inputs:
         input_dict[elem.get('name')] = elem.get('value')
-    sleep(int(soap.select_one('#timer').text.strip()))
+    try:
+        sleep(int(soap.select_one('#timer').text.strip()))
+    except:
+        import traceback
+        print(traceback.format_exc(), '\n\n', html)
     r2=s.post('http://thebindaas.com/blog/links/go', data=input_dict, headers={'User-Agent': ua, 'X-Requested-With': 'XMLHttpRequest'}, verify=False)
     try:
         json=r2.json()
