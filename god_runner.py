@@ -46,6 +46,7 @@ def run_bot(main_link, main_domain, main_referer, final_domain, bypass_referer, 
         options.add_argument('--headless=new')
     options.add_argument('--ignore-certificate-errors')
     options.add_argument('--no-sandbox')
+    options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--disable-gpu')
     options.add_argument('--ignore-ssl-errors')
     options.add_argument('--disable-notifications')
