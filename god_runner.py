@@ -19,18 +19,18 @@ def run_bot(main_link, main_domain, main_referer, final_domain, bypass_referer, 
                 status_code=403,
                 body=''
             )
-        '''elif '.css' in url or urlparse(driver.current_url).netloc not in url:
+        elif '.css' in url:
             request.create_response(
                 status_code=200,
                 body=''
             )
-        """if urlparse(main_referer).netloc in url:
+        if urlparse(main_referer).netloc in url:
             request.create_response(
                 status_code=200,
                 body=f'<a href="{main_link}">Continue</a>'
-            )"""
+            )
         if final_domain in url:
-            request.headers['Referer'] = bypass_referer'''
+            request.headers['Referer'] = bypass_referer
 
     def response_interceptor(request, response):
         if '/links/go' in request.url:
@@ -68,6 +68,7 @@ def run_bot(main_link, main_domain, main_referer, final_domain, bypass_referer, 
         
     driver.maximize_window()
     print("Opening Mocked URL...")
+    print('Current URL', driver.current_url)
     driver.get(main_referer)
     find_until_clicklable(driver, By.CSS_SELECTOR, 'a').click()
     print("Redirecting with Referer Header...")
