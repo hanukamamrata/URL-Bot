@@ -6,10 +6,14 @@ from time import sleep
 from urllib.parse import urlparse
 from ad_blocker import is_ads
 
+ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
 
 def run_bot(main_link, main_domain, main_referer, final_domain, bypass_referer, proxy=None, headless=True):
     def request_interceptor(request):
         url = request.url
+        del request.headers['User-Agent']
+        request.headers['User-Agent'] = ua
+        
         if is_ads(url):
             request.create_response(
                 status_code=403,
