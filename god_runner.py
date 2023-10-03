@@ -19,7 +19,7 @@ def run_bot(main_link, main_domain, main_referer, final_domain, bypass_referer, 
                 status_code=403,
                 body=''
             )
-        elif '.css' in url or urlparse(driver.current_url).netloc not in url:
+        '''elif '.css' in url or urlparse(driver.current_url).netloc not in url:
             request.create_response(
                 status_code=200,
                 body=''
@@ -30,7 +30,7 @@ def run_bot(main_link, main_domain, main_referer, final_domain, bypass_referer, 
                 body=f'<a href="{main_link}">Continue</a>'
             )"""
         if final_domain in url:
-            request.headers['Referer'] = bypass_referer
+            request.headers['Referer'] = bypass_referer'''
 
     def response_interceptor(request, response):
         if '/links/go' in request.url:
