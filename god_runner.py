@@ -40,7 +40,7 @@ def run_bot(main_link, main_domain, main_referer, final_domain, bypass_referer, 
     
     options = webdriver.ChromeOptions()
     options.add_experimental_option("excludeSwitches", ["enable-logging"])
-    options.add_argument('--blink-settings=imagesEnabled=false')
+    #options.add_argument('--blink-settings=imagesEnabled=false')
     options.add_argument("--remote-debugging-port=9222")
     if headless:
         options.add_argument('--headless=new')
