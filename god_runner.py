@@ -107,7 +107,7 @@ def run_bot(main_link, main_domain, main_referer, final_domain, bypass_referer, 
 if __name__ == "__main__":
     main_link = 'https://linkpays.in/DwbVBo2'
     main_domain = 'linkpays.in'
-    main_referer = 'https://www.techlandbd.com'
+    main_referer = 'https://thekisscartoon.com'
     final_domain = 'tech.smallinfo.in/Gadget'
     bypass_referer = 'https://loan.insuranceinfos.in'
     run_bot(main_link, main_domain, main_referer, final_domain, bypass_referer, proxy=None, headless=True)
