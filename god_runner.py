@@ -8,6 +8,8 @@ from ad_blocker import is_ads
 
 ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
 
+# data:,
+
 def run_bot(main_link, main_domain, main_referer, final_domain, bypass_referer, proxy=None, headless=True):
     def request_interceptor(request):
         url = request.url
@@ -34,7 +36,7 @@ def run_bot(main_link, main_domain, main_referer, final_domain, bypass_referer, 
 
     def response_interceptor(request, response):
         if '/links/go' in request.url:
-            body=decode(response.body, response.headers.get('Content-Encoding', 'identity'))
+            body=decode(response.body, response.headers.get('Content-Encoding', 'identity')).decode()
             print(main_domain,':', body)
     
     
