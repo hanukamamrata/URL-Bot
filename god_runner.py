@@ -24,11 +24,11 @@ def run_bot(main_link, main_domain, main_referer, final_domain, bypass_referer, 
                 status_code=200,
                 body=''
             )
-        if urlparse(main_referer).netloc in url:
+        """if urlparse(main_referer).netloc in url:
             request.create_response(
                 status_code=200,
                 body=f'<a href="{main_link}">Continue</a>'
-            )
+            )"""
         if final_domain in url:
             request.headers['Referer'] = bypass_referer
 
