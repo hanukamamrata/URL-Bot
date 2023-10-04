@@ -31,13 +31,13 @@ def run_bot(main_link, main_domain, main_referer, final_domain, bypass_referer, 
                 status_code=200,
                 body=f'<a href="{main_link}">Continue</a>'
             )
-        if final_domain in url:
-            request.headers['Referer'] = bypass_referer
+        '''if final_domain in url:
+            request.headers['Referer'] = bypass_referer'''
 
     def response_interceptor(request, response):
         if '/links/go' in request.url:
             body=decode(response.body, response.headers.get('Content-Encoding', 'identity')).decode()
-            print(main_domain,':', body)
+            print(main_domain+':', body)
     
     
     options = webdriver.ChromeOptions()
@@ -70,16 +70,25 @@ def run_bot(main_link, main_domain, main_referer, final_domain, bypass_referer, 
         
     driver.maximize_window()
     print("Opening Mocked URL...")
-    print('Current URL', driver.current_url)
     driver.get(main_referer)
     find_until_clicklable(driver, By.CSS_SELECTOR, 'a').click()
-    print("Redirecting with Referer Header...")
+    print("Redirecting with Main Referer Header...")
     sleep(5)
     dps = driver.page_source
     if '502 Bad Gateway' in dps or '403 Forbidden' in dps or 'Check your proxy settings' in dps:
         raise Exception(str(driver.page_source))
-    print("Opening Final Page with bypass Referer header...")
-    driver.get(main_link.replace(main_domain, final_domain))
+    print('Completing 1st Page...')
+    sleep(int(find_until_located(driver, By.CSS_SELECTOR, '#yuidea-time').text))
+    find_until_clicklable(driver, By.CSS_SELECTOR, "#yuidea").click()
+    print('Completing 2nd Page...')
+    sleep(3)
+    driver.execute_script("window.open = (url) => {window.location.href = url}")
+    find_until_clicklable(driver, By.CSS_SELECTOR, "#yuidea-snp button").click()
+    print('Completing 3rd Page...')
+    sleep(3)
+    sleep(int(find_until_located(driver, By.CSS_SELECTOR, "#wpsafe-time").text))
+    find_until_clicklable(driver, By.CSS_SELECTOR, "#btn6").click()
+    print("Opening Final Page...")
     print('Finding button...')
     try:
         get_link_button=find_until_located(driver, By.CSS_SELECTOR, ".get-link")
