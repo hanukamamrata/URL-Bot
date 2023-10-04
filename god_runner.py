@@ -78,9 +78,13 @@ def run_bot(main_link, main_domain, main_referer, final_domain, bypass_referer, 
     if '502 Bad Gateway' in dps or '403 Forbidden' in dps or 'Check your proxy settings' in dps:
         raise Exception(str(driver.page_source))
     print('Completing 1st Page...')
-    # sleep(int(find_until_located(driver, By.CSS_SELECTOR, '#yuidea-time').text))
-    # find_until_clicklable(driver, By.CSS_SELECTOR, "#yuidea").click()
-    driver.execute_script("document.cookie='cap_y2=10';document.cookie='cap_y=;expires=Thu, 01 Jan 1970 00:00:01 GMT';window.location.reload()")
+    try:
+        # sleep(int(find_until_located(driver, By.CSS_SELECTOR, '#yuidea-time').text))
+        # find_until_clicklable(driver, By.CSS_SELECTOR, "#yuidea").click()
+        driver.execute_script("document.cookie='cap_y2=10';document.cookie='cap_y=;expires=Thu, 01 Jan 1970 00:00:01 GMT';window.location.reload()")
+    except:
+        import traceback
+        raise Exception(traceback.format_exc() + '\n\n' + driver.page_source)
     print('Completing 2nd Page...')
     sleep(3)
     driver.execute_script("window.open = (url) => {window.location.href = url}")
