@@ -125,7 +125,7 @@ if __name__ == "__main__":
     from proxyscrape import get_session
     main_link = 'https://linkpays.in/DwbVBo2'
     main_domain = 'linkpays.in'
-    main_referer = 'https://thekisscartoon.com'
+    main_referer = 'https://www.techlandbd.com/'
     final_domain = 'tech.smallinfo.in/Gadget'
     bypass_referer = 'https://loan.insuranceinfos.in'
     proxy=get_session()
