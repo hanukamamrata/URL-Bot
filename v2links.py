@@ -13,7 +13,8 @@ def run_v2links_bot(link:str, proxy=None, headless=True):
         s.proxies={'http':proxy,'https':proxy}
     s.cookies.set('ab','2', domain='.vzu.us')
     ua, cf_token = get_cloudflare_bypass_data(proxy)
-    r1=s.get(link.replace('vlshort.com', 'vzu.us'), headers={'User-Agent': ua, 'Referer': 'https://gadgetsreview27.com', 'Cookie': 'cf_clearance='+cf_token})
+    s.cookies.set('cf_clearance', cf_token, domain='.vzu.us')
+    r1=s.get(link.replace('vlshort.com', 'vzu.us'), headers={'User-Agent': ua, 'Referer': 'https://gadgetsreview27.com'})
     html=r1.text
     soap=BeautifulSoup(html, 'html.parser')
     form_inputs = soap.select('form#go-link input')
@@ -25,7 +26,7 @@ def run_v2links_bot(link:str, proxy=None, headless=True):
     except:
         import traceback
         print(traceback.format_exc(), '\n\n', html)
-    r2=s.post('https://vzu.us/links/go', data=input_dict, headers={'User-Agent': ua, 'X-Requested-With': 'XMLHttpRequest', 'Cookie': 'cf_clearance='+cf_token})
+    r2=s.post('https://vzu.us/links/go', data=input_dict, headers={'User-Agent': ua, 'X-Requested-With': 'XMLHttpRequest'})
     try:
         json=r2.json()
     except:
