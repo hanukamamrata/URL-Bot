@@ -12,7 +12,7 @@ threading.excepthook=excepthook
 
 def main(proxy=None, **kw):
     t=[]
-    t.append(Thread(target=lambda: run_v2links_bot(random_v2links, proxy, **kw)))
+    #t.append(Thread(target=lambda: run_v2links_bot(random_v2links, proxy, **kw)))
     
     for v in t:
         v.start()
