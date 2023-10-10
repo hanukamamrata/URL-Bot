@@ -1,6 +1,7 @@
 selenium==4.12.0
 selenium-wire
 selenium-recaptcha
+undetected-chromedriver
 requests
 bs4
 asyncio
