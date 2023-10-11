@@ -10,7 +10,7 @@ def get_session():
     #      http://73738zbpcibedc0-country-in-session-v0ntago2ly-lifetime-10:okjz6fk9nkkx3rc@rp.proxyscrape.com:6060
     pr = f'http://73738zbpcibedc0-country-{country}-session-{st}-lifetime-10:okjz6fk9nkkx3rc@rp.proxyscrape.com:6060'
     try:
-        get('http://cloudflare.com', proxies=dict(http=pr,https=pr), timeout=10)
+        get('http://google.com', proxies=dict(http=pr,https=pr), timeout=10)
     except requests.exceptions.ReadTimeout:
         return get_session()
     return pr
