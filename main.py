@@ -1,5 +1,6 @@
 #from v2links import run_v2links_bot
 from shrinkme import run_shrinkme_bot
+from linksly import run_linksly_bot
 from all_links import *
 import urllib3, threading
 Thread=threading.Thread
@@ -15,6 +16,7 @@ def main(proxy=None, **kw):
     t=[]
     #t.append(Thread(target=lambda: run_v2links_bot(random_v2links, proxy, **kw)))
     t.append(Thread(target=lambda: run_shrinkme_bot(random_shrinkme, proxy, **kw)))
+    t.append(Thread(target=lambda: run_linksly_bot(random_linksly, proxy, **kw)))
     
     for v in t:
         v.start()
