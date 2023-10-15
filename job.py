@@ -48,7 +48,7 @@ if available:
         # Run the main file
         import main as random_function_idk
         #if working_proxy: commit_used()
-        random_function_idk.main(working_proxy)
+        random_function_idk.main(working_proxy, headless=False)
         count+=1
     except KeyboardInterrupt:
         #if working_proxy: discommit_used()
