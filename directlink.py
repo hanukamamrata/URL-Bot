@@ -1,6 +1,8 @@
 import undetected_chromedriver as uc
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from os import path
+import os
 from time import sleep
 
 def run_directlink_bot(link, proxy=None, headless=True):
