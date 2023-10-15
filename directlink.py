@@ -15,7 +15,7 @@ def run_directlink_bot(link, proxy=None, headless=True):
     options.add_argument('--ignore-certificate-errors')
     options.add_experimental_option("prefs", {"profile.managed_default_content_settings.images": 2}) # Block all Image
     
-    driver = uc.Chrome(options=options, seleniumwire_options=dict(proxy=dict(http=proxy, https=proxy)))
+    driver = uc.Chrome(version_main=117, options=options, seleniumwire_options=dict(proxy=dict(http=proxy, https=proxy)))
     driver.maximize_window()
     driver.get(link)
     old_url = driver.current_url
