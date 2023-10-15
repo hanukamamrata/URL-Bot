@@ -1,4 +1,6 @@
 import seleniumwire.undetected_chromedriver as uc
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
 def run_directlink_bot(link, proxy=None, headless=True):
@@ -16,7 +18,8 @@ def run_directlink_bot(link, proxy=None, headless=True):
     driver = uc.Chrome(options=options, seleniumwire_options=dict(proxy=dict(http=proxy, https=proxy)))
     driver.maximize_window()
     driver.get(link)
-    sleep(5)
+    old_url = driver.current_url
+    WebDriverWait(driver, 30).until(EC.url_changes(current_url))
     driver.quit()
 
 
