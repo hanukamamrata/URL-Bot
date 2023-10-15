@@ -18,8 +18,11 @@ def run_directlink_bot(link, proxy=None, headless=True):
     driver = uc.Chrome(version_main=117, options=options, seleniumwire_options=dict(proxy=dict(http=proxy, https=proxy)))
     driver.maximize_window()
     driver.get(link)
+    if 'Anonymous Proxy detected' in driver.page_source:
+        raise Exception('Anonymous Proxy detected, So request blocked.')
     old_url = driver.current_url
-    WebDriverWait(driver, 30).until(EC.url_changes(current_url))
+    WebDriverWait(driver, 30).until(EC.url_changes(old_url))
+    sleep(3)
     driver.quit()
 
 
