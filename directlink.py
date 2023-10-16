@@ -2,7 +2,7 @@ from requests import Session
 import re
 
 def run_directlink_bot(link, proxy=None, headless=None):
-    ua='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36'
+    ua='Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36'
     s=Session()
     s.proxies=dict(http=proxy, https=proxy)
     r1=s.get(link, headers={'User-Agent':ua, 'Referer': 'https://technicalzarir.blogspot.com'})
