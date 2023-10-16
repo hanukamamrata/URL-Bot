@@ -4,3 +4,4 @@ git config --global user.name "dev-zarir"
 git add .
 git commit -am "Update"
 git push origin main
+exit
