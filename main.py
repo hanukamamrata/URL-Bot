@@ -14,8 +14,8 @@ threading.excepthook=excepthook
 
 def main(proxy=None, **kw):
     t=[]
-    for i in range(randint(1,3)):
-        t.append(Thread(target=lambda: run_directlink_bot(random_directlink, proxy, **kw)))
+    #for i in range(randint(1,3)):
+        #t.append(Thread(target=lambda: run_directlink_bot(random_directlink, proxy, **kw)))
     for i in range(randint(1,2)):
         t.append(Thread(target=lambda: run_shrinkforearn_bot(random_shrinkforearn, proxy, **kw)))
     

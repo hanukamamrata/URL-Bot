@@ -11,3 +11,9 @@ random_directlink = choice([
     'https://www.highcpmrevenuegate.com/vt01utgb?key=6ca6ca076f75f77c7f7d4e79f0892a78'
 ])
 
+
+
+"""function randomNumber(min, max) {
+
+    return Math.floor(Math.random() * (max - min) + min);
+}"""
