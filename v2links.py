@@ -1,22 +1,19 @@
 from time import sleep
 from requests import Session
 from bs4 import BeautifulSoup
-from proxyscrape import get_session
 # For Browser
-#import undetected_chromedriver as uc
-#from os import path
-#import requests, zipfile, os
+import undetected_chromedriver as uc
+from os import path
+import requests, zipfile, os
 
 def run_v2links_bot(link:str, proxy=None, headless=True):
     s=Session()
     if proxy:
         s.proxies={'http':proxy,'https':proxy}
     s.cookies.set('ab','2', domain='.vzu.us')
-    ua = 'Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Mobile Safari/537.36'
-    cf_token='UmXeAsDakPg2GNotf.vonmE_ghZ2soTzu3m.c4oWTMw-1697335677-0-1-f75fb6bd.ae295f8c.8f1e5686-160.2.1697335677'
-    #ua, cf_token = get_cloudflare_bypass_data(proxy)
+    ua, cf_token = get_cloudflare_bypass_data(proxy)
     s.cookies.set('cf_clearance', cf_token, domain='.vzu.us')
-    r1=s.get(link.replace('vlshort.com', 'vzu.us'), headers={'User-Agent': ua, 'Referer': 'https://gadgetsreview27.com', 'X-Forwarded-For':'23.251.121.155'})
+    r1=s.get(link.replace('vlshort.com', 'vzu.us'), headers={'User-Agent': ua, 'Referer': 'https://gadgetsreview27.com'})
     html=r1.text
     soap=BeautifulSoup(html, 'html.parser')
     form_inputs = soap.select('form#go-link input')
@@ -28,7 +25,7 @@ def run_v2links_bot(link:str, proxy=None, headless=True):
     except:
         import traceback
         print(traceback.format_exc(), '\n\n', html)
-    r2=s.post('https://vzu.us/links/go', data=input_dict, headers={'User-Agent': ua, 'X-Requested-With': 'XMLHttpRequest', 'X-Forwarded-For':'23.251.121.155'})
+    r2=s.post('https://vzu.us/links/go', data=input_dict, headers={'User-Agent': ua, 'X-Requested-With': 'XMLHttpRequest'})
     try:
         json=r2.json()
     except:
