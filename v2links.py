@@ -133,7 +133,7 @@ def get_cloudflare_bypass_data(PROXY=None):
     else:
         options.add_argument(f'--load-extension={ext_dir}')
     
-    driver = uc.Chrome(options=options)
+    driver = uc.Chrome(version_main=117, options=options)
     
     driver.maximize_window()
     driver.execute_script('window.open("https://vzu.us")')
