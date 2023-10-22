@@ -3,12 +3,15 @@ from aiohttp_proxy import ProxyConnector
 from bs4 import BeautifulSoup
 
 async def check_proxy(proxy_url):
-    url = 'http://exurl.in'
+    url = 'http://vzu.us/'
+    scode = 403
+    contains = 'Just a moment'
+    
     connector = ProxyConnector.from_url(proxy_url, limit=50000)
     try:
         async with aiohttp.ClientSession(connector=connector) as session:
             async with session.get(url, timeout=10) as response:
-                if response.status == 200 and 'Shorten' in await response.text():
+                if response.status == scode and contains in await response.text():
                     return True
                 else:
                     return False
