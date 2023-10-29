@@ -9,7 +9,7 @@ def run_directlink_bot(link, proxy=None, headless=None):
     if not match:
         if 'Anonymous Proxy detected' in r1.text:
             raise Exception('Request Blocked because proxy detected.')
-        raise Exception('Error: No token found.')
+        raise Exception('Error: No token found. HTML: %s' % r1.text)
     
     token=match[0]
     r2=s.get(f'https://www.toprevenuegate.com/api/users', params={'token': token, 'uuid':'', 'pii':'', 'in': 'false'}, headers={'Referer': link}, allow_redirects=False)
