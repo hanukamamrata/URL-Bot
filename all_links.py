@@ -10,3 +10,5 @@ random_directlink = choice([
     'https://www.toprevenuegate.com/q9z3ms5n1?key=e78b9d03d3b1668e95eed8207c4d1118'
 ])
 
+random_adrino = f'https://amritadrino.com/includes/open.php?id={choice(list(range(2425906, 2425910)) + list(range(2425911, 2425977)))}'
+
