@@ -1,5 +1,4 @@
 from all_links import *
-from directlink import run_directlink_bot
 from adrinolinks import run_adrino_bot
 from nanolinks import run_nano_bot
 from random import randint
@@ -15,8 +14,6 @@ threading.excepthook=excepthook
 
 def main(proxy=None, **kw):
     t=[]
-    #for i in range(randint(1,3)):
-        #t.append(Thread(target=lambda: run_directlink_bot(random_directlink, proxy, **kw)))
     t.append(Thread(target=lambda: run_adrino_bot(random_adrino, proxy, **kw)))
     t.append(Thread(target=lambda: run_nano_bot(random_nanolinks, proxy, **kw)))
     
@@ -30,7 +27,7 @@ def main(proxy=None, **kw):
     
     # Slow earning speed
     from time import sleep
-    sleep(90)
+    sleep(10)
 
 
 
