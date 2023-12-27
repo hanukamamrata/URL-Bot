@@ -1,6 +1,5 @@
 from all_links import *
 from adrinolinks import run_adrino_bot
-from magiclinks import run_magic_bot
 from nanolinks import run_nano_bot
 from random import randint
 import urllib3, threading

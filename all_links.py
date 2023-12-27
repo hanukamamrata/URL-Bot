@@ -14,4 +14,3 @@ random_adrino = f'https://amritadrino.com/includes/open.php?id={choice(list(rang
 
 random_nanolinks = f'https://computerpedia.in/includes/open.php?id={choice(list(range(830387, 830457)))}'
 
-random_magic = f'https://magiclink1.com/tzpost-{randint(1,70)}'
