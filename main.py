@@ -14,7 +14,7 @@ threading.excepthook=excepthook
 
 def main(proxy=None, **kw):
     t=[]
-    t.append(Thread(target=lambda: run_adrino_bot(random_adrino, proxy, **kw)))
+    #t.append(Thread(target=lambda: run_adrino_bot(random_adrino, proxy, **kw)))
     t.append(Thread(target=lambda: run_nano_bot(random_nanolinks, proxy, **kw)))
     
     for v in t:
