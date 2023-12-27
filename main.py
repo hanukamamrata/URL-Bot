@@ -27,7 +27,7 @@ def main(proxy=None, **kw):
     
     # Slow earning speed
     from time import sleep
-    sleep(10)
+    #sleep(10)
 
 
 

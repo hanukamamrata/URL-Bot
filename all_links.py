@@ -13,3 +13,5 @@ random_directlink = choice([
 random_adrino = f'https://amritadrino.com/includes/open.php?id={choice(list(range(2425906, 2425910)) + list(range(2425911, 2425977)))}'
 
 random_nanolinks = f'https://computerpedia.in/includes/open.php?id={choice(list(range(830387, 830457)))}'
+
+random_magic = f'https://magiclink1.com/tzpost-{randint(1,70)}'
