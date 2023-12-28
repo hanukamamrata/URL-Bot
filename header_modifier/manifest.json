@@ -1,0 +1,23 @@
+{
+  "name": "Header Modifier",
+  "description": "An extension to modify request headers",
+  "version": "15",
+  "manifest_version": 3,
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": ["*://*/*"],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "minimum_chrome_version": "70"
+}

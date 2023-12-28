@@ -1,0 +1,81 @@
+[
+  {
+    "id": 1,
+    "priority": 3,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        { "operation": "set", "header": "Referer", "value": "https://technicalzarir.blogspot.com/" }
+      ]
+    },
+    "condition": {
+      "urlFilter": "*",
+      "resourceTypes": [
+        "script",
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "other"
+      ],
+      "requestMethod": [
+        "connect",
+        "delete",
+        "get",
+        "head",
+        "options",
+        "patch",
+        "post",
+        "put"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 7,
+    "action": {
+      "type": "modifyHeaders",
+      "requestHeaders": [
+        {
+          "operation": "remove",
+          "header": "Referer"
+        }
+      ]
+    },
+    "condition": {
+      "urlFilter": "*cf*",
+      "resourceTypes": [
+        "script",
+        "main_frame",
+        "sub_frame",
+        "stylesheet",
+        "image",
+        "font",
+        "object",
+        "xmlhttprequest",
+        "ping",
+        "csp_report",
+        "media",
+        "websocket",
+        "other"
+      ],
+      "requestMethod": [
+        "connect",
+        "delete",
+        "get",
+        "head",
+        "options",
+        "patch",
+        "post",
+        "put"
+      ]
+    }
+  }
+]

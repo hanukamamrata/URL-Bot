@@ -1,3 +1,4 @@
 requests
 bs4
 cloudscraper
+DrissionPage>=4.0.0b32
