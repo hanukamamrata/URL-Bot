@@ -1,10 +1,11 @@
 from cloudscraper import CloudScraper as Session
+from proxyscrape import generate_random_ip
 import re
 
 def run_nano_bot(link, proxy=None, headless=None):
     s=Session()
-    s.proxies=dict(http=proxy, https=proxy)
-    r1=s.get(link, headers={'Referer': 'https://technicalzarir.blogspot.com'}, allow_redirects=False)
+    #s.proxies=dict(http=proxy, https=proxy)
+    r1=s.get(link, headers={'Referer': 'https://technicalzarir.blogspot.com', 'X-Forwarded-For': generate_random_ip()}, allow_redirects=False)
     print('Nano Links:', r1.headers.get('Location'))
     
 

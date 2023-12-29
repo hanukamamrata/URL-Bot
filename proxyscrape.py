@@ -1,7 +1,7 @@
 from requests import get
 from random import choices, randint, choice
 from string import ascii_letters, digits
-import requests
+import requests, random
 
 def get_session():
     countries = ['us', 'gb', 'au', 'ca', 'in', 'mx', 'nz']
@@ -13,6 +13,9 @@ def get_session():
     #except requests.exceptions.ReadTimeout:
     #    return get_session()
     return pr
+
+def generate_random_ip():
+    return f"{random.randint(1, 255)}.{random.randint(0, 255)}.{random.randint(0, 255)}.{random.randint(1, 254)}"
 
 if __name__ == '__main__':
     pr = get_session()
