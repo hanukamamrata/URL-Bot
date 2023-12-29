@@ -7,7 +7,10 @@ def old_run_adrino_bot(link, proxy=None, headless=None):
     s=Session()
     # s.proxies=dict(http=proxy, https=proxy)
     r1=s.get(link, headers={'Referer': 'https://technicalzarir.blogspot.com', 'X-Forwarded-For': generate_random_ip()}, allow_redirects=False)
-    print('Adrino Links:', r1.headers.get('Location'))
+    loc = r1.headers.get('Location')
+    if loc is None:
+        raise Exception('Error in adrino links. Location is None')
+    print('Adrino Links:', loc)
     
     
 def run_adrino_bot(link, proxy=None, headless=None):
@@ -34,7 +37,10 @@ def run_adrino_bot(link, proxy=None, headless=None):
     
     s=Session()
     r1=s.get(link, headers={'User-Agent': ua, 'Referer': 'https://technicalzarir.blogspot.com', 'X-Forwarded-For': generate_random_ip()}, cookies=cookies, allow_redirects=False)
-    print('Adrino Links:', r1.headers.get('Location'))
+    loc = r1.headers.get('Location')
+    if loc is None:
+        raise Exception('Error in nano links. Location is None')
+    print('Adrino Links:', loc)
 
 
 if __name__=='__main__':
