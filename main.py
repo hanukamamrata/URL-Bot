@@ -1,7 +1,6 @@
 from all_links import *
 from adrinolinks import run_adrino_bot
 from nanolinks import run_nano_bot
-from srolinks import run_sro_bot
 from telegramlinks import run_telegram_bot
 from random import randint
 import urllib3, threading
@@ -18,7 +17,6 @@ def main(proxy=None, **kw):
     t=[]
     t.append(Thread(target=lambda: run_adrino_bot(random_adrino, proxy, **kw)))
     t.append(Thread(target=lambda: run_nano_bot(random_nanolinks, proxy, **kw)))
-    t.append(Thread(target=lambda: run_sro_bot(random_srolinks, proxy, **kw)))
     t.append(Thread(target=lambda: run_telegram_bot(random_telegramlinks, proxy, **kw)))
 
     for v in t:
@@ -31,7 +29,7 @@ def main(proxy=None, **kw):
     
     # Slow earning speed
     from time import sleep
-    sleep(60)
+    sleep(80)
 
 
 

@@ -2,9 +2,6 @@ from random import randint, choice
 
 random_v2links = f'http://vlshort.com/tzpost-{randint(1,70)}'
 
-random_srolinks = f'https://srolink.com/tzpost-{randint(1,70)}'
-
-
 random_telegramlinks = f'https://telegramlink.in/tzpost-{randint(1,70)}'
 
 random_shrinkforearn = f'http://shrinkforearn.xyz/tzpost-{randint(1,70)}'
