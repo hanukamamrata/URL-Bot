@@ -8,11 +8,14 @@ def run_telegram_bot(link, proxy=None, headless=None):
     s.proxies=dict(http=proxy, https=proxy)
     r=s.get(link, headers={'Referer': 'https://technicalzarir.blogspot.com/'}, allow_redirects=False)
     s.cookies.set('ab', '2', domain='telegramlink.in')
-    r=s.get(link, headers={'Referer': 'https://tipsloanusa.com/'})
+    r=s.get(link, headers={'Referer': 'https://thinksrace.com/'})
     doc = BeautifulSoup(r.text, 'html.parser')
     all_inputs = {i.get('name') : i.get('value') for i in doc.select('form input')}
     sleep(1)
-    r=s.post('https://telegramlink.in/links/go', data=all_inputs, headers={'X-Requested-With': 'XMLHttpRequest'})
+    r=s.post('https://telegramlink.in/links/go', data=all_inputs, headers={'X-Requested-With': 'XMLHttpRequest', 'Origin': 'https://telegramlink.in', 'Referer': link})
+    
+    if 'Error' in r.text:
+        raise Exception('Error is Telegram Links: Response:\n %s\nCookie: %s' % (r.text, s.cookies))
 
     print('Telegram Links:', r.text)
     
