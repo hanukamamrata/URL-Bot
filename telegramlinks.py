@@ -8,7 +8,7 @@ def run_telegram_bot(link, proxy=None, headless=None):
     s.proxies=dict(http=proxy, https=proxy)
     r=s.get(link, headers={'Referer': 'https://technicalzarir.blogspot.com/'}, allow_redirects=False)
     s.cookies.set('ab', '2', domain='telegramlink.in')
-    r=s.get(link, headers={'Referer': 'https://thinksrace.com/'})
+    r=s.get(link, headers={'Referer': 'https://hosty.helpowi.com/'})
     doc = BeautifulSoup(r.text, 'html.parser')
     all_inputs = {i.get('name') : i.get('value') for i in doc.select('form input')}
     sleep(1)
