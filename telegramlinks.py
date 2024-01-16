@@ -6,7 +6,7 @@ from time import sleep
 def run_telegram_bot(link, proxy=None, headless=None):
     s=Session()
     s.proxies=dict(http=proxy, https=proxy)
-    r=s.get(link, headers={'Referer': 'https://technicalzarir.blogspot.com/'}, allow_redirects=False)
+    r=s.get(link, headers={'Referer': 'https://thekisscartoon.com/'}, allow_redirects=False)
     s.cookies.set('ab', '2', domain='telegramlink.in')
     r=s.get(link, headers={'Referer': 'https://hosty.webseriesreel.in/'})
     doc = BeautifulSoup(r.text, 'html.parser')
