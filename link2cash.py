@@ -9,7 +9,7 @@ def run_link2cash_bot(link, proxy=None, headless=None):
     attempt = 0
     while attempt < 2:
         attempt += 1
-        r=s.get(link, headers={'Referer': 'https://thekisscartoon.com/'}, allow_redirects=False)
+        r=s.get(link, headers={'Referer': 'https://technicalzarir.blogspot.com/'}, allow_redirects=False)
         s.cookies.set('ab', '2', domain='link2cash.in')
         r=s.get(link.replace('fly.', ''), headers={'Referer': 'https://sapnogalpo.online/'})
         doc = BeautifulSoup(r.text, 'html.parser')
