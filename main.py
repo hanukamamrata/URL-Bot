@@ -2,7 +2,8 @@ from all_links import *
 # from adrinolinks import run_adrino_bot
 from nanolinks import run_nano_bot
 # from telegramlinks import run_telegram_bot
-from teraboxlinks import run_terabox_bot
+# from teraboxlinks import run_terabox_bot
+from link2cash import run_link2cash_bot
 from random import randint
 import urllib3, threading
 Thread=threading.Thread
@@ -19,7 +20,8 @@ def main(proxy=None, **kw):
     # t.append(Thread(target=lambda: run_adrino_bot(random_adrino, proxy, **kw)))
     t.append(Thread(target=lambda: run_nano_bot(random_nanolinks, proxy, **kw)))
     # t.append(Thread(target=lambda: run_telegram_bot(random_telegramlinks, proxy, **kw)))
-    t.append(Thread(target=lambda: run_terabox_bot(random_teraboxlinks, proxy, **kw)))
+    # t.append(Thread(target=lambda: run_terabox_bot(random_teraboxlinks, proxy, **kw)))
+    t.append(Thread(target=lambda: run_link2cash_bot(random_link2cash, proxy, **kw)))
 
     for v in t:
         v.start()
@@ -31,7 +33,7 @@ def main(proxy=None, **kw):
     
     # Slow earning speed
     from time import sleep
-    sleep(80)
+    sleep(75)
 
 
 
