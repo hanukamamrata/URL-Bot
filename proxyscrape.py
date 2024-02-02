@@ -6,12 +6,9 @@ import requests, random
 def get_session():
     countries = ['us', 'gb', 'au', 'ca', 'in', 'mx', 'nz']
     country = choice(countries) 
-    st = ''.join(choices(ascii_letters+digits, k=randint(8,20)))
-    pr = f'http://ieyqmoirvvpfdh6-country-{country}-session-{st}-lifetime-10:7dvv9jwswj601ad@rp.proxyscrape.com:6060'
-    #try:
-    #    get('http://google.com', proxies=dict(http=pr,https=pr), timeout=10)
-    #except requests.exceptions.ReadTimeout:
-    #    return get_session()
+    st = ''.join(choices(digits, k=randint(8,20)))
+    country=country.upper()
+    pr = f'http://11031539-res-country-{country}-session-{st}:ps2ah00tr@190.2.143.237:14504'
     return pr
 
 def generate_random_ip():
