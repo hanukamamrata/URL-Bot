@@ -8,7 +8,7 @@ def get_session():
     country = choice(countries) 
     st = ''.join(choices(digits, k=randint(8,20)))
     country=country.upper()
-    pr = f'http://11031539-res-country-{country}-session-{st}:ps2ah00tr@190.2.143.237:14504'
+    pr = f'http://11153341-res-country-{country}-session-{st}:16hjs1ik5d@190.2.143.237:12053'
     return pr
 
 def generate_random_ip():
