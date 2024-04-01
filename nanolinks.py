@@ -8,13 +8,14 @@ def run_nano_bot(link, proxy=None, headless=None):
     r1=s.get(link, headers={'Referer': 'https://thekisscartoon.com/'}, allow_redirects=False)
     loc = r1.headers.get('Location')
     if loc is None:
-        raise Exception('Error in nano links. Location is None')
+        raise Exception(f'Error in nano links. Location is None. Status: {r1.status_code}')
     print('Nano Links:', loc)
     
 
 
 if __name__=='__main__':
     from all_links import random_nanolinks
+    print(random_nanolinks)
     run_nano_bot(random_nanolinks, headless=False)
 
 

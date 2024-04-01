@@ -7,8 +7,8 @@ def get_session():
     countries = ['us', 'gb', 'au', 'ca', 'in', 'mx', 'nz']
     country = choice(countries) 
     st = ''.join(choices(digits, k=randint(8,20)))
-    country=country.upper()
-    pr = f'http://11153341-res-country-{country}-session-{st}:16hjs1ik5d@190.2.143.237:12053'
+    # country=country.upper()
+    pr = f'http://tb5yx56js6pc37m-country-{country}-session-{st}-lifetime-10:01274ark8k88vvm@rp.proxyscrape.com:6060'
     return pr
 
 def generate_random_ip():
