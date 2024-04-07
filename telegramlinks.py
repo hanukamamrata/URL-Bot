@@ -8,7 +8,7 @@ def run_telegram_bot(link, proxy=None, headless=None):
     s=Session()
     # s.proxies=dict(http=proxy, https=proxy)
     s.cookies.set('ab', '2', domain='telegramlink.in')
-    r=s.get(link, headers={'Referer': 'https://thekisscartoon.com/'})
+    r=s.get(link, headers={'Referer': 'https://www.pcgamespunch.com/'})
     url = re.findall(r'href\s*=\s*"(.*?)"', r.text)[0]
     r=s.get(url)
     doc = BeautifulSoup(r.text, 'html.parser')
