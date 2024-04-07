@@ -3,7 +3,7 @@ from all_links import *
 # from nanolinks import run_nano_bot
 # from telegramlinks import run_telegram_bot
 from teraboxlinks import run_terabox_bot
-from malink import run_malink_bot
+# from malink import run_malink_bot
 # from zagl import run_zagl_bot
 from random import randint
 import urllib3, threading
@@ -22,7 +22,7 @@ def main(proxy=None, **kw):
     # t.append(Thread(target=lambda: run_nano_bot(random_nanolinks, proxy, **kw)))
     # t.append(Thread(target=lambda: run_telegram_bot(random_telegramlinks, proxy, **kw)))
     t.append(Thread(target=lambda: run_terabox_bot(random_teraboxlinks, proxy, **kw)))
-    t.append(Thread(target=lambda: run_malink_bot(random_malink, proxy, **kw)))
+    # t.append(Thread(target=lambda: run_malink_bot(random_malink, proxy, **kw)))
     # t.append(Thread(target=lambda: run_zagl_bot(random_zagl, proxy, **kw)))
 
     for v in t:
