@@ -14,7 +14,7 @@ random_teraboxlinks = f'https://wikitraveltips.com/includes/open.php?id={choice(
 
 random_zagl = f'https://za.gl/tzpost{randint(1,70)}'
 
-random_link2cash = f"https://fly.link2cash.in/{choice(['wGFY', 'AqVW', '83Bk', '5Qlv', '1reQZp', 'K2ew', 'jgOO', 'YRAo', '4CoK8T', 'a6rlSR9w2z', '9UvR', 'M0gx', 'g3hx', 'w4Oju', 'OSWtY', 'zbrh', 'LUvWR', 'pkrL', 'ZioSeCReJ', 'ruAuY', 'BZvj', 'ePGj', 'GHnA3', 'VEqPcJ', '3DrTv', 'imsg', 'hVzRy', 'sGVUxKuh', 'uhnx', 'PbI5Oy', 'fsT9i', 'c698', 'OLZHn', 'R212r', 'z3Fj', 'tNgfjM', 'tErobWlQ', 'ZmaFti', 'UcHX', 'I7pfO', '4Dx8zT', '1Q4Lv', 'xrb7', 'HCXPc4', 'sWUmuJ', 'MVQEUi6LIz', 'K7lrS', 'J39bq', 'TCDj', 'DbcJK', 'h1Pbc', 'ZzcgCW', 'Avmnh', '8dkD', 'mfkLPVdP2D', 'kpupvv', 'l4nJ', '46cT', 'Exsr', '1pbegX', 'NsrD', 'sYpjyz', 'ZJNqdT', 'gEoNEm8UT', 'w1Oxhn', 'vcEePF', 'PGnUIZ', 'Ct7P8', 'oIiMZM', '8GpeB', 'rkxC', '4cmDK4', 'gYAAg'])}"
+random_malink = f'https://malink.in/' + choice(['ROKTKcN', 'UOzYixP', 'pKfdNA', 'uTxh5d4', 'q2uW', '7ZCPvN', '0QVtGN', 'rKjN5M', 'T5Vw', '1fUqkN', '4tvU', 'weju', '3Nqt4NA', 'YW0O', 'GaZoGX', 'XWSw1Xm', 'JVtZBaQ', 'RkFw6', 'ENlDh', 'cm66S', 'cSJS7G', 'BlcOfG', '7SCGNi2', 'MbgBTOK', 'AweTzYb', 'GP1GBR', 'E7Zw', 'gMzh', 'J665', 'dhkdk', '39P5', 'ESkVLy', 'teC7', 'sRAFeHF', 'LeVj', '8Ch2V', 's7VL', 'gzfcAZ', '6zaZYZ6', 'Fdj2', 'qjao', '3vnskY', 'HjXJ', 'uBU1t', 'qTUJy', 'OxtJUXd', 'pm0OF', '9h8ab9u', '7Q4J', 'YQBv', 'LzdSM', 'sj3N', 'rjn2s', 'UTQS3', '5WNKvA', 'NFCO', 'WoEex', 'TtOwL9', 'kn2UAjh', 'aVjUXO', '6FWou', 'HkLz', 'pw9Z3k', '4RtI3', 'PqOB4hA', 'G0nbSwB', 'L6QrI', '5UZ9j7Z', 'gyyPZ', 'GwuY'])
 
 
 
