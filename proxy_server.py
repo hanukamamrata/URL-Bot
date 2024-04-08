@@ -3,9 +3,9 @@ from aiohttp_proxy import ProxyConnector
 from bs4 import BeautifulSoup
 
 async def check_proxy(proxy_url):
-    url = 'http://vzu.us/'
-    scode = 403
-    contains = 'Just a moment'
+    url = 'http://ip.oxylabs.com'
+    scode = 200
+    contains = '.'
     
     connector = ProxyConnector.from_url(proxy_url, limit=50000)
     try:
@@ -115,5 +115,7 @@ working_proxy = asyncio.run(find_working_proxy(all_resp_text))
 
 commit_used = lambda x=working_proxy: add_to_db(x)
 discommit_used = lambda x=working_proxy: remove_from_db(x)
+
+commit_used()
 
 print(working_proxy, flush=True)
