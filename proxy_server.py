@@ -1,6 +1,7 @@
 import requests, asyncio, aiohttp
 from aiohttp_proxy import ProxyConnector
 from bs4 import BeautifulSoup
+import re
 
 async def check_proxy(proxy_url):
     url = 'http://ip.oxylabs.com'
@@ -98,16 +99,22 @@ def fpl_proxies():
     ta_text = ta.text.split('\n')[3:]
     return give_them_prot('\n'.join(ta_text))
 
+def psProxies():
+    r = requests.get('https://api.proxyscrape.com/v3/free-proxy-list/get?request=displayproxies&proxy_format=protocolipport&format=text')
+    pl = r.text.replace('\r\n','\n')
+    return pl
 
 api_dict = {
-    'http': [f'https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http{i}&timeout=10000&country=all&ssl=all&anonymity=all' for i in ['', 's']],
-    'socks4': ['https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks4&timeout=10000&country=all&ssl=all&anonymity=all'],
-    'socks5': ['https://api.proxyscrape.com/v2/?request=displayproxies&protocol=socks5&timeout=10000&country=all&ssl=all&anonymity=all']
+    'http': [],
+    'socks4': [],
+    'socks5': []
 }
 
-all_resp_text = get_all_proxies(api_dict)
+all_resp_text = ''
+all_resp_text += get_all_proxies(api_dict)
 all_resp_text += geonode_proxies()
 all_resp_text += fpl_proxies()
+all_resp_text += psProxies()
 
 used_ip = requests.get('https://ip-limiter-server.onrender.com/used').text
 
