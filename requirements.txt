@@ -1,4 +1,7 @@
 requests
 bs4
 cloudscraper
+aiohttp
+asyncio
+aiohttp-proxy
 # DrissionPage>=4.0.0b32
