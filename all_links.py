@@ -17,5 +17,5 @@ random_zagl = f'https://za.gl/tzpost{randint(1,70)}'
 random_malink = f'https://malink.in/' + choice(['ROKTKcN', 'UOzYixP', 'pKfdNA', 'uTxh5d4', 'q2uW', '7ZCPvN', '0QVtGN', 'rKjN5M', 'T5Vw', '1fUqkN', '4tvU', 'weju', '3Nqt4NA', 'YW0O', 'GaZoGX', 'XWSw1Xm', 'JVtZBaQ', 'RkFw6', 'ENlDh', 'cm66S', 'cSJS7G', 'BlcOfG', '7SCGNi2', 'MbgBTOK', 'AweTzYb', 'GP1GBR', 'E7Zw', 'gMzh', 'J665', 'dhkdk', '39P5', 'ESkVLy', 'teC7', 'sRAFeHF', 'LeVj', '8Ch2V', 's7VL', 'gzfcAZ', '6zaZYZ6', 'Fdj2', 'qjao', '3vnskY', 'HjXJ', 'uBU1t', 'qTUJy', 'OxtJUXd', 'pm0OF', '9h8ab9u', '7Q4J', 'YQBv', 'LzdSM', 'sj3N', 'rjn2s', 'UTQS3', '5WNKvA', 'NFCO', 'WoEex', 'TtOwL9', 'kn2UAjh', 'aVjUXO', '6FWou', 'HkLz', 'pw9Z3k', '4RtI3', 'PqOB4hA', 'G0nbSwB', 'L6QrI', '5UZ9j7Z', 'gyyPZ', 'GwuY'])
 
 
-random_directlink = choice(['https://www.profitablegatecpm.com/q9dx84xj01?key=431c789984f8c21e9fe78dfa1570628f', 'https://www.profitablegatecpm.com/dpdbueckz4?key=eda1df91c0229f5dc90328d5d2ee47ab'])
+random_directlink = choice(['https://r-q-e.com/df3397b5b15bef1e9559/fff47c52b1/?placementName=default', 'https://r-q-e.com/df3397b5b15bef1e9559/1d86cd26fa/?placementName=default'])
 
