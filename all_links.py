@@ -1,6 +1,6 @@
 from random import randint, choice
 
-random_v2links = f'http://vlshort.com/tzpost-{randint(1,70)}'
+random_v2links = f'https://v2links.me/tzpost-{randint(1,70)}'
 
 random_udlinks = f'https://www.udlinks.com/tzpost-{randint(1,70)}'
 

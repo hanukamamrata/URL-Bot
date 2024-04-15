@@ -1,5 +1,5 @@
 from cloudscraper import CloudScraper as Session
-#from DrissionPage import ChromiumPage, ChromiumOptions
+from DrissionPage import ChromiumPage, ChromiumOptions
 from proxyscrape import generate_random_ip
 import os, time
 
@@ -45,6 +45,6 @@ def run_adrino_bot(link, proxy=None, headless=None):
 
 if __name__=='__main__':
     from all_links import random_adrino
-    old_run_adrino_bot(random_adrino, headless=False)
+    run_adrino_bot(random_adrino, headless=False)
 
 
