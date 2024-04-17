@@ -27,10 +27,10 @@ def run_telegram_bot(link, proxy=None, headless=None):
     btn6 = page.ele('#btn6')
     if not btn6: raise Exception('`Continue` button is not found.')
     while btn6:
-        sleep(5)
         page.run_js('''[...document.querySelectorAll('[style*="none"]')].forEach(function(e){e.removeAttribute('style')})''')
-        btn6.click()
         btn6 = page.ele('#btn6')
+        btn6.click().left(True)
+        sleep(5)
     
     getLink = page.ele('css:.get-link')
     if not getLink: raise Exception('Get Link button not found!')
@@ -38,6 +38,7 @@ def run_telegram_bot(link, proxy=None, headless=None):
     disabled = True
     while disabled: disabled = page.run_js("document.querySelector('.get-link').classList.contains('disabled')", as_expr=True)
     getLink.click()
+    page.quit()
     if not d: addToDB()
     print('Telegram Links:', 'All Done')
     
