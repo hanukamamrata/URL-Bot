@@ -21,7 +21,7 @@ def main(proxy=None, **kw):
     # t.append(Thread(target=lambda: run_adrino_bot(random_adrino, proxy, **kw)))
     # t.append(Thread(target=lambda: run_nano_bot(random_nanolinks, proxy, **kw)))
     t.append(Thread(target=lambda: run_telegram_bot(random_telegramlinks, proxy, **kw)))
-    # t.append(Thread(target=lambda: run_terabox_bot(random_teraboxlinks, proxy, **kw)))
+    t.append(Thread(target=lambda: run_terabox_bot(random_teraboxlinks, proxy, **kw)))
     # t.append(Thread(target=lambda: run_malink_bot(random_malink, proxy, **kw)))
     # t.append(Thread(target=lambda: run_zagl_bot(random_zagl, proxy, **kw)))
 
@@ -31,7 +31,7 @@ def main(proxy=None, **kw):
     if d['e']!='': raise Exception(d['e'])
     # Slow earning speed
     from time import sleep
-    sleep(1)
+    sleep(15)
 
 
 

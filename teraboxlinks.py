@@ -15,7 +15,8 @@ def run_terabox_bot(link, proxy=None, headless=None):
 
 if __name__=='__main__':
     from all_links import random_teraboxlinks
+    from proxyscrape import get_session
     print(random_teraboxlinks)
-    run_terabox_bot(random_teraboxlinks, headless=False)
+    run_terabox_bot(random_teraboxlinks, get_session(), headless=False)
 
 
