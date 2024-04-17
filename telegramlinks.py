@@ -25,7 +25,10 @@ def run_telegram_bot(link, proxy=None, headless=None):
     # page.get('https://tiny.cc/mjqsxz')
     # input('Press Enter when VPN Connected...')
     # ============ End ============
-    page.get(link)
+    page.get('https://freegamer.blogspot.com/robots.txt')
+    page.run_js(f'window.location.href = "{link}"')
+    sleep(2)
+    page.wait.doc_loaded()
     if '403 Forbidden' in page.title:
         page.quit()
         raise Exception('IP not allowed. 403 Forbidden Error!')
