@@ -31,7 +31,7 @@ def run_telegram_bot(link, proxy=None, headless=None):
         page.run_js('''[...document.querySelectorAll('[style*="none"]')].forEach(function(e){e.removeAttribute('style')})''')
         try:
             btn6 = page.ele('#btn6')
-            btn6.click()
+            if btn6: btn6.click()
         except ElementNotFoundError:
             pass
         sleep(5)
@@ -42,6 +42,7 @@ def run_telegram_bot(link, proxy=None, headless=None):
     disabled = True
     while disabled: disabled = page.run_js("document.querySelector('.get-link').classList.contains('disabled')", as_expr=True)
     getLink.click()
+    sleep(3)
     page.quit()
     if not d: addToDB()
     print('Telegram Links:', 'All Done')
