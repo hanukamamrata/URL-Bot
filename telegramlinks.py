@@ -29,7 +29,7 @@ def run_telegram_bot(link, proxy=None, headless=None):
     while btn6:
         page.run_js('''[...document.querySelectorAll('[style*="none"]')].forEach(function(e){e.removeAttribute('style')})''')
         btn6 = page.ele('#btn6')
-        btn6.click().left(True)
+        btn6.click()
         sleep(5)
     
     getLink = page.ele('css:.get-link')
