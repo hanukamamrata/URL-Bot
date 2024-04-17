@@ -1,6 +1,7 @@
 from time import sleep
 from cloudscraper import CloudScraper as Session
 from DrissionPage import ChromiumPage, ChromiumOptions
+from DrissionPage.errors import ElementNotFoundError
 
 def isDuplicate():
     ip = Session().get('https://ip.oxylabs.io').text
@@ -28,8 +29,11 @@ def run_telegram_bot(link, proxy=None, headless=None):
     if not btn6: raise Exception('`Continue` button is not found.')
     while btn6:
         page.run_js('''[...document.querySelectorAll('[style*="none"]')].forEach(function(e){e.removeAttribute('style')})''')
-        btn6 = page.ele('#btn6')
-        btn6.click()
+        try:
+            btn6 = page.ele('#btn6')
+            btn6.click()
+        except ElementNotFoundError:
+            pass
         sleep(5)
     
     getLink = page.ele('css:.get-link')
