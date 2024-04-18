@@ -31,7 +31,7 @@ def main(proxy=None, **kw):
     if d['e']!='': raise Exception(d['e'])
     # Slow earning speed
     from time import sleep
-    # sleep(15)
+    sleep(30)
 
 
 
