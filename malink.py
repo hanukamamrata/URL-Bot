@@ -28,6 +28,6 @@ if __name__=='__main__':
     from proxyscrape import get_session
     from all_links import random_malink
     print(random_malink)
-    run_malink_bot(random_malink, get_session(), headless=False)
+    run_malink_bot(random_malink, None, headless=False)
 
 
