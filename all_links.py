@@ -2,6 +2,8 @@ from random import randint, choice
 
 random_v2links = f'https://v2links.me/tzpost-{randint(1,70)}'
 
+random_kingurl = f'https://kingurl.in/tzpost-{randint(1,70)}'
+
 random_udlinks = f'https://www.udlinks.com/tzpost-{randint(1,70)}'
 
 random_telegramlinks = f'https://telegramlink.in/{choice(["dv8uz1", "QopoBN2", "FEkv3", "x6F3Lr4", "KpLym25", "OMVaA6", "rtENL7", "vGnF8", "fuE99", "xa6X10", "rDkEmw11", "sd4812", "7Sb0fd13", "as61BO14", "7RlKX15", "i0FkMc16", "IRCMb17", "NBTGW18", "vwZr819", "FxFM20", "dRacDD21", "8Pkheo22", "HcAg23", "Va4e24", "8MUGj25", "yYmer26", "f0V9u27", "IxAZ28", "wt8zy29", "pIg1TV30", "cb1gR31", "ukDt532", "zq7dk33", "s9mr34", "CPql35", "2dxH36", "sn9eq237", "UTeo38", "SKkhK39", "olbjr040", "It9z41", "l8aa542", "NhFWeB43", "aNxP544", "En9REl45", "yFPb7v46", "aDYBG47", "rssdfD48", "5w1j9V49", "nw19Qy50", "9IhcH51", "CXms52", "OzGB53", "de4S54", "5NhB0455", "DorNoz56", "68LF57", "MqvvWs58", "lmwie59", "Mv9GIM60", "fnRLk61", "ujez62", "tcvl763", "o2VoRL64", "HJeu65", "S1ma66", "4qFs67", "q5Yj68", "SOG47969", "5LDRmp70", "HLIzVy71", "nK0oO72", "dH4jj73", "W5dc74", "I48eV75", "UyTZ76", "Sigh77", "pdIXq78", "MY2mBo79", "igd6U80", "isIQJ81", "rKf4b82", "YWmS183", "wUI9TS84", "T9tbJ585", "VaCVwh86", "jkPBD487", "WrwCXR88", "Dnq389", "lLPT190", "TVl2n91", "xLjJ092", "fQeSY93", "6jyq94", "ufiy95", "ke4pr96", "BYAGHb97", "5PQAAh98", "XKxVnQ99", "5FRLHJ100"])}'
