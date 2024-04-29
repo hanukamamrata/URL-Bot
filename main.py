@@ -29,13 +29,13 @@ def main(proxy=None, **kw):
     t=[]
     t.append(Thread(target=lambda: run_terabox_bot(random_teraboxlinks, proxy, **kw)))
     # t.append(Thread(target=lambda: run_zagl_bot(random_zagl, proxy, **kw)))
-    if not isDuplicate():
-        t.append(Thread(target=lambda: run_kingurl_bot(random_kingurl, None, **kw)))
+    # if not isDuplicate():
+        # t.append(Thread(target=lambda: run_kingurl_bot(random_kingurl, None, **kw)))
         # t.append(Thread(target=lambda: run_telegram_bot(random_telegramlinks, None, **kw)))
         # t.append(Thread(target=lambda: run_udlinks_bot(random_udlinks, None, **kw)))
         # t.append(Thread(target=lambda: run_malink_bot(random_malink, None, **kw)))
-        addToDB()
-    else: print('Skipping some thread for duplicate view.')
+        # addToDB()
+    # else: print('Skipping some thread for duplicate view.')
 
     for v in t: v.start()
     for v in t: v.join()
@@ -43,7 +43,7 @@ def main(proxy=None, **kw):
     if d['e']!='': raise Exception(d['e'])
     # Slow earning speed
     from time import sleep
-    sleep(1)
+    sleep(40)
 
 
 
