@@ -39,7 +39,7 @@ def main(proxy=None, **kw):
 
     for v in t: v.start()
     for v in t: v.join()
-        
+    
     if d['e']!='': raise Exception(d['e'])
     # Slow earning speed
     from time import sleep
