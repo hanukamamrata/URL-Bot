@@ -37,7 +37,7 @@ def run_udlinks_bot(link, proxy=None, headless=None):
     r = s.get(link, headers={'Referer': ref})
     d = BeautifulSoup(r.text, 'html.parser')
     data = { i.get('name') : i.get('value') for i in d.select('#go-link input[name]')}
-    sleep(1)
+    sleep(int(d.select_one('#timer').text))
     r = s.post('https://www.udlinks.com/links/go', headers={'X-Requested-With': 'XMLHttpRequest', 'Origin': 'https://www.udlinks.com', 'Referer': link}, data=data)
     if 'Go With earn' not in r.text: raise Exception('Error in UDLinks: %s' % r.text)
     print('UDLinks:', r.text)
