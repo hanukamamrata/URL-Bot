@@ -2,8 +2,10 @@ from time import sleep
 from bs4 import BeautifulSoup
 from cloudscraper import CloudScraper
 from urllib.parse import urljoin, urlparse
+from limiter import *
 import re
 
+idn = 'urlbot-udlinks'
 
 class Session(CloudScraper):
     history = []
@@ -29,6 +31,7 @@ def get_req_data(link):
     return referer
 
 def run_udlinks_bot(link, proxy=None, headless=None):
+    if isCompleted(685): return print('Target Completed. Function didn’t run.')
     ref = get_req_data(link)
     s = CloudScraper()
     s.cookies.set('ab', '2', domain='www.udlinks.com')
@@ -41,6 +44,7 @@ def run_udlinks_bot(link, proxy=None, headless=None):
     r = s.post('https://www.udlinks.com/links/go', headers={'X-Requested-With': 'XMLHttpRequest', 'Origin': 'https://www.udlinks.com', 'Referer': link}, data=data)
     if 'Go With earn' not in r.text: raise Exception('Error in UDLinks: %s' % r.text)
     print('UDLinks:', r.text)
+    submitOne()
     
 
 if __name__=='__main__':
