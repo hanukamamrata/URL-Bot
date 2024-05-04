@@ -9,6 +9,7 @@ def run_terabox_bot(link, proxy=None, headless=None):
     s=Session()
     s.proxies=dict(http=proxy, https=proxy)
     r1=s.get(link, headers={'Referer': 'https://thekisscartoon.com/'}, allow_redirects=False, stream=True)
+    open('test.html', 'wb').write(r1.content)
     loc = r1.headers.get('Location')
     if loc is None:
         raise Exception('Error in teraboxlinks links. Location is None')
