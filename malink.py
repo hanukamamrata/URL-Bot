@@ -43,7 +43,7 @@ def get_req_data(link, proxy=None):
 def run_malink_bot(link, proxy=None, headless=None):
     idn = 'urlbot-malink'
     if isCompleted(720, idn): return print('Target Completed. Function did not run.')
-    ref = get_req_data(link, proxy)
+    ref = get_req_data(link)
     s = CloudScraper()
     s.proxies = dict(http=proxy, https=proxy)
     s.cookies.set('ab', '2', domain='malink.in')
