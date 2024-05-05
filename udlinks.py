@@ -30,7 +30,7 @@ def get_req_data(link):
 
 def run_udlinks_bot(link, proxy=None, headless=None):
     idn = 'urlbot-udlinks'
-    if isCompleted(720, idn): return print('Target Completed. Function didn’t run.')
+    if isCompleted(720, idn): return print('Target Completed. Function did not run.')
     ref = get_req_data(link)
     s = CloudScraper()
     s.cookies.set('ab', '2', domain='www.udlinks.com')
