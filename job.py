@@ -62,7 +62,7 @@ if available:
         import traceback
         print(traceback.format_exc())
 
-"""
+
 if count <= 10000000:
     resp = post(
         f"https://api.github.com/repos/{owner_and_repo}/actions/workflows/Job.yml/dispatches",
@@ -75,7 +75,7 @@ if count <= 10000000:
     )
     if resp.status_code != 204:
         print(resp.text)
-        exit_with_error=True"""
+        exit_with_error=True
 
 if exit_with_error:
     sys.exit(1)
