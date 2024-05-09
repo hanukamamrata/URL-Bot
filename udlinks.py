@@ -29,8 +29,8 @@ def get_req_data(link):
     return referer
 
 def run_udlinks_bot(link, proxy=None, headless=None):
-    idn = 'urlbot-udlinks'
-    if isCompleted(720, idn): return print('Target Completed. Function did not run.')
+    # idn = 'urlbot-udlinks'
+    # if isCompleted(720, idn): return print('Target Completed. Function did not run.')
     ref = get_req_data(link)
     s = CloudScraper()
     s.cookies.set('ab', '2', domain='www.udlinks.com')
@@ -43,7 +43,7 @@ def run_udlinks_bot(link, proxy=None, headless=None):
     r = s.post('https://www.udlinks.com/links/go', headers={'X-Requested-With': 'XMLHttpRequest', 'Origin': 'https://www.udlinks.com', 'Referer': link}, data=data)
     if 'Go With earn' not in r.text: raise Exception('Error in UDLinks: %s' % r.text)
     print('UDLinks:', r.text)
-    submitOne(idn)
+    # submitOne(idn)
     
 
 if __name__=='__main__':
